@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { OrbitControls, useGLTF } from '@react-three/drei'
 import { easing } from 'maath'
+import useWindowDimensions from './utils'
 
 const Colors1 = ['#027bff', '#28a745', '#bd0eaa', '#ffc008']
 const Colors2 = ['#dc3545', '#212529', '#bebebe', '#563d7c']
@@ -27,10 +28,11 @@ const Shirt = (props: { color: string }) => {
 
 const App = () => {
   const [SelectedColor, setSelectedColor] = useState(Colors1[0])
+  const { width } = useWindowDimensions()
 
   return (
     <div style={{ width: '100vw', height: '100vh', backgroundColor: '#2191b7', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-      <Canvas style={{ width: '50%', height: '100%', backgroundColor: '#fff' }}>
+      <Canvas style={{ width: width < 800 ? '100%' : '50%', height: '100%', backgroundColor: '#fff' }}>
         <ambientLight intensity={Math.PI / 2} />
         <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} decay={0} intensity={Math.PI} />
         <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
