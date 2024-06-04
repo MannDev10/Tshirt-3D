@@ -43,6 +43,11 @@ const App = () => {
           maxPolarAngle={Math.PI / 2}
         />
       </Canvas>
+      <div style={{ position: 'absolute', top: '5%', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', flexDirection: 'column' }}>
+        <span style={{ color: '#000' }}><b><i>Firman Maulana</i></b></span>
+        <span style={{ color: '#000' }}><b><i>50421523</i></b></span>
+        <span style={{ color: '#000' }}><b><i>3IA18</i></b></span>
+      </div>
       <div style={{ display: 'flex', alignItems: 'stretch', flexDirection: 'row', position: 'absolute', bottom: '20%' }}>
         {Colors1.map((item, index) => (
           <div
